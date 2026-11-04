@@ -14,10 +14,10 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: nexusfinance-frontend:4.0
+          image: nexusfinance-frontend:5.0
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 5173
+            - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -28,5 +28,5 @@ spec:
     app: nexusfinance-frontend
   ports:
     - port: 5173
-      targetPort: 5173
+      targetPort: 80
   type: NodePort
