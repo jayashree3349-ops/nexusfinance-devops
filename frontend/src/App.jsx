@@ -29,7 +29,32 @@ function App() {
   };
 
   useEffect(() => {
-    fetchTransactions();
+    let active = true;
+
+    const loadTransactions = async () => {
+      try {
+        const response = await fetch(API_URL);
+        if (!response.ok) throw new Error("Could not load transactions");
+
+        const data = await response.json();
+        if (active) {
+          setTransactions(data);
+          setError("");
+        }
+      } catch (err) {
+        if (active) {
+          setError(err.message || "Unable to connect to backend");
+        }
+      } finally {
+        if (active) setLoading(false);
+      }
+    };
+
+    loadTransactions();
+
+    return () => {
+      active = false;
+    };
   }, []);
 
   const handleSubmit = async (event) => {
