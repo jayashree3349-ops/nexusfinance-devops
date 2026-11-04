@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nexusfinance-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nexusfinance-frontend
+  template:
+    metadata:
+      labels:
+        app: nexusfinance-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: nexusfinance-frontend:1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5173
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nexusfinance-frontend
+spec:
+  selector:
+    app: nexusfinance-frontend
+  ports:
+    - port: 5173
+      targetPort: 5173
+  type: NodePort
