@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: nexusfinance-backend
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: nexusfinance-backend
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: nexusfinance-backend:1.0
+          image: nexusfinance-backend:3.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
