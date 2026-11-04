@@ -1,0 +1,20 @@
+NAME                                         READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nexusfinance-backend         3/3     3            3           5d11h
+deployment.apps/nexusfinance-backend-green   2/2     2            2           23h
+deployment.apps/nexusfinance-frontend        1/1     1            1           5d11h
+
+NAME                                 TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+service/kubernetes                   ClusterIP   10.96.0.1        <none>        443/TCP          5d13h
+service/nexusfinance-backend         ClusterIP   10.107.160.138   <none>        3000/TCP         5d11h
+service/nexusfinance-backend-green   ClusterIP   10.106.236.201   <none>        3000/TCP         23h
+service/nexusfinance-frontend        NodePort    10.96.204.239    <none>        5173:31414/TCP   5d11h
+service/postgres                     ClusterIP   10.107.5.32      <none>        5432/TCP         23h
+
+NAME                                 STATUS   VOLUME        CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+persistentvolumeclaim/postgres-pvc   Bound    postgres-pv   5Gi        RWO            manual         <unset>                 23h
+
+NAME                                                       REFERENCE                         TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/nexusfinance-backend   Deployment/nexusfinance-backend   cpu: 1%/50%   3         10        3          23h
+
+NAME                                                     POD-SELECTOR   AGE
+networkpolicy.networking.k8s.io/postgres-access-policy   app=postgres   23h

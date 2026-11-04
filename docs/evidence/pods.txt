@@ -1,0 +1,21 @@
+NAMESPACE     NAME                                          READY   STATUS      RESTARTS      AGE     IP                NODE      NOMINATED NODE   READINESS GATES
+default       green-test                                    0/1     Completed   0             23h     192.168.235.161   worker1   <none>           <none>
+default       nexusfinance-backend-6787dcc877-8crgc         1/1     Running     1 (23h ago)   23h     192.168.235.154   worker1   <none>           <none>
+default       nexusfinance-backend-6787dcc877-s268s         1/1     Running     1 (23h ago)   23h     192.168.235.151   worker1   <none>           <none>
+default       nexusfinance-backend-6787dcc877-vfrw8         1/1     Running     1 (23h ago)   23h     192.168.235.152   worker1   <none>           <none>
+default       nexusfinance-backend-green-7876c777f6-57bhg   1/1     Running     0             23h     192.168.235.163   worker1   <none>           <none>
+default       nexusfinance-backend-green-7876c777f6-wn4fb   1/1     Running     0             23h     192.168.235.162   worker1   <none>           <none>
+default       nexusfinance-frontend-6c665d5db8-sqql6        1/1     Running     0             23h     192.168.235.142   worker1   <none>           <none>
+default       postgres-0                                    1/1     Running     0             23h     192.168.235.164   worker1   <none>           <none>
+kube-system   calico-kube-controllers-576865d959-95vhm      1/1     Running     1 (25h ago)   5d13h   192.168.219.69    master    <none>           <none>
+kube-system   calico-node-4ftbm                             1/1     Running     1 (25h ago)   5d13h   172.31.38.50      worker1   <none>           <none>
+kube-system   calico-node-jzhcl                             1/1     Running     1 (25h ago)   5d13h   172.31.42.99      master    <none>           <none>
+kube-system   coredns-674b8bbfcf-kxk8t                      1/1     Running     1 (25h ago)   5d13h   192.168.219.70    master    <none>           <none>
+kube-system   coredns-674b8bbfcf-zg2v2                      1/1     Running     1 (25h ago)   5d13h   192.168.219.68    master    <none>           <none>
+kube-system   etcd-master                                   1/1     Running     1 (25h ago)   5d13h   172.31.42.99      master    <none>           <none>
+kube-system   kube-apiserver-master                         1/1     Running     1 (25h ago)   5d13h   172.31.42.99      master    <none>           <none>
+kube-system   kube-controller-manager-master                1/1     Running     1 (25h ago)   5d13h   172.31.42.99      master    <none>           <none>
+kube-system   kube-proxy-qvdll                              1/1     Running     1 (25h ago)   5d13h   172.31.42.99      master    <none>           <none>
+kube-system   kube-proxy-sk699                              1/1     Running     1 (25h ago)   5d13h   172.31.38.50      worker1   <none>           <none>
+kube-system   kube-scheduler-master                         1/1     Running     1 (25h ago)   5d13h   172.31.42.99      master    <none>           <none>
+kube-system   metrics-server-6f9bf66-gqzxs                  1/1     Running     0             23h     192.168.235.147   worker1   <none>           <none>
